@@ -1,1 +1,1 @@
-# 10-team-generator
+# Team Generator
