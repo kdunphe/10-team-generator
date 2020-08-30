@@ -66,34 +66,36 @@ const employeeQuestions = [{
 // Source: https://www.npmjs.com/package/inquirer
 // Source: https://jestjs.io/docs/en/getting-started.html
 
-
+function formatText(answers) {
+    return answers.Name
+}
 
   
   
   // function to initialize program
   // Source: https://www.npmjs.com/package/inquirer
-//   function init() {
-//     return inquirer
-//       .prompt(questions)
-//       .then(answers => {
-//         console.log(answers);
-//         // Format responses in markdown
-//         let markdown = formatText(answers);
-//         // Call a function and return a string with markdown text
-//         fs.writeFile('ReadMe-Demo.md', markdown, function (err) {
-//           if (err) throw err;
-//           console.log("Done! Successfully created ReadMe-Demo.md");
-//         });
-//       })
+  function init() {
+    return inquirer
+      .prompt(employeeQuestions)
+      .then(answers => {
+        console.log(answers);
+        // Format responses in html
+        let html = formatText(answers);
+        // Call a function and return a string with markdown text
+        fs.writeFile('team.html', html, function (err) {
+          if (err) throw err;
+          console.log("Done! Successfully created team.html");
+        });
+      })
   
-//       .catch(err => {
-//         console.log(err)
-//       });
-//   }
+      .catch(err => {
+        console.log(err)
+      });
+  }
   
   
-//   // function call to initialize program
-//   init();
+  // function call to initialize program
+  init();
 
 
 
